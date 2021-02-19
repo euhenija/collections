@@ -2,18 +2,17 @@ import java.util.Stack;
 
 public class FlipTheNumber {
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<>();
+        Stack stack = new Stack();
         int number = 123;
-        while (number > 0) {
-            stack.push(number % 10);
-            number = number / 10;
+        char[] numbers = String.valueOf(number).toCharArray();
+
+        for (char num : numbers) {
+            stack.push(num);
         }
-        int revNumber = 0;
-        int helper = 1;
+
         while (!stack.empty()) {
-            revNumber=revNumber+stack.pop()*helper;
-            helper=helper*10;
+            System.out.print(stack.pop());
         }
-        System.out.println(revNumber);
+
     }
 }
